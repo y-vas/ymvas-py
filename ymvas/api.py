@@ -1,5 +1,6 @@
-from jict import jict
+
 from .stock import StockTrading
+from jict import jict
 import requests
 
 class Ymvas:
@@ -8,6 +9,8 @@ class Ymvas:
 
     def __init__( self , auth , base = None ):
         self._auth = auth
+        self.stock = StockTrading(self)
+
         if base is not None:
             self._url = base
 
