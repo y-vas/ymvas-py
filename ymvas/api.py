@@ -35,6 +35,6 @@ class API:
         )['data']
 
         if path is not None:
-            info = self.-getpath(info,path)
+            info = self._getpath(info,path)
 
         return info

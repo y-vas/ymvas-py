@@ -27,7 +27,7 @@ setup(
     description = "YmvasPy is a python wrapper for YMVAS's REST API.",
     long_description= jict_readme,
     long_description_content_type = 'text/markdown',
-    packages = [ "ymvas-py" ],
+    packages = [ "ymvas" ],
     author='Vasyl Yovdiy',
     author_email='yovdiyvasyl@gmail.com',
     url = "https://github.com/y-vas/ymvas-py",

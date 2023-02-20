@@ -2,7 +2,7 @@
 
 """ YmvasPy is a python wrapper for YMVAS's REST API. """
 
-__version__ = '1'
+__version__ = '1.0.1'
 from .api import API
 
 __all__ = ( 'api' )
