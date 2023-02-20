@@ -1,14 +1,15 @@
 from jict import jict
 from .stock import StockTrading
+import requests
 
-class API:
+class Ymvas:
     _auth = None
     _url  = 'https://api.ymvas.com'
 
     def __init__( self , auth , base = None ):
         self._auth = auth
-        if env is not None:
-            self._url = env
+        if base is not None:
+            self._url = base
 
     def api( self , url ):
         data = requests.get(
