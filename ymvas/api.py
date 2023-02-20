@@ -1,7 +1,7 @@
 
 from .stock import StockTrading
 from jict import jict
-import requests
+import requests, yaml
 
 class Ymvas:
     _auth = None
@@ -19,13 +19,16 @@ class Ymvas:
             self._url + url,
             headers = { "API_PASS" : self._auth }
         )
+
         return jict(data.json())
 
     def _getpath(self , data , path ):
         keys = path.split('.')
+
         dt = data
         for x in keys:
             dt = dt[x]
+
         return dt
 
     def dict( self , project , path = None  ):
@@ -42,3 +45,11 @@ class Ymvas:
             info = self._getpath(info,path)
 
         return info
+
+    def secrets( self , project ):
+        info = self.api(
+            f'/in/{project}/secrets'
+        )['data']
+
+        df = { x['key'] : yaml.safe_load(x['value']) for x in info }
+        return df
