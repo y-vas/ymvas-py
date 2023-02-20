@@ -1,5 +1,5 @@
 from jict import jict
-from .stock.data import StockTrading
+from .stock import StockTrading
 
 class API:
     _auth = None
