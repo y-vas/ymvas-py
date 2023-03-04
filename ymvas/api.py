@@ -46,8 +46,7 @@ class Ymvas:
     def _getpath(self , data , path ):
         keys = path.split('.')
         dt = data
-        for x in keys:
-            dt = dt[x]
+        for x in keys: dt = dt[x]
         return dt
 
     def dict( self , label='@' , path = None ):
@@ -57,7 +56,7 @@ class Ymvas:
             f'/in/{project}/storages/data/{label}'
         )['data']
 
-        if path is not None:
+        if path is not None and != '':
             info = self._getpath( info , path )
 
         return info
@@ -67,5 +66,5 @@ class Ymvas:
             project = self._config['project']
 
         info = self.api(f'/in/{project}/secrets')['data']
-        df = { x['key'] : yaml.safe_load(x['value']) for x in info }
+        df = jict({ x['key'] : yaml.safe_load(x['value']) for x in info })
         return df
