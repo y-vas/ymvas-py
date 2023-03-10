@@ -61,6 +61,15 @@ class Ymvas:
 
         return info
 
+    def storages( self , label = '@' ):
+        project = self._config['project']
+
+        info = self.api(
+            f'/in/{project}/storages/data/{label}'
+        )['data']
+
+        return info
+
     def secrets( self , project = None ):
         if project == None:
             project = self._config['project']
