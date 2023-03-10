@@ -56,7 +56,7 @@ class Ymvas:
             f'/in/{project}/storages/data/{label}'
         )['data']
 
-        if path is not None and != '':
+        if path is not None and path != '':
             info = self._getpath( info , path )
 
         return info
