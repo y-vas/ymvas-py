@@ -41,6 +41,7 @@ class YmvasCommandLine:
 
         path = path.split('.')
         for x in path: info = info[x]
+
         return info
 
     def exec(self , comm ):
@@ -106,4 +107,6 @@ class YmvasCommandLine:
         return self.vs.secrets()
 
 s = YmvasCommandLine()
-s.interpret_command( sys.argv[1:] )
+s.set_project_for_current_dir('vas/yovdiy')
+x = s.interpret_command( sys.argv[1:] )
+print( x )
